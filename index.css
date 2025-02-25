@@ -1,0 +1,448 @@
+/* Resetando margens e padding para garantir que não há espaço extra */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Definindo box-sizing para todos os elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+:root {
+    --cor-padrão: #ff523b;
+    --cor-padrão-hover: #f3b2e5;
+    --cor-fonte: #fff;
+    --cor-fonte-p: #555;
+    --cor-btn: #563434;
+    --cor-btn-hover: #15ff00;
+    --cor-btn-font: #000;
+    --cor-fonte-corpo: #555;
+    --cor-fonte-corpo-lev: #777;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: flex-end; /* Alinha o conteúdo à direita */
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+}
+
+.nav {
+    position: fixed; /* Fixa a posição no topo direito */
+    top: 10px; /* Ajusta a distância do topo */
+    right: 10px; /* Ajusta a distância da direita */
+    background-color: #ffffff; /* Cor de fundo branca */
+    padding: 10px;
+    transition: 0.5s;
+    border-radius: 50px; /* Borda arredondada */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
+    display: flex;
+    align-items: center; /* Alinha os itens na mesma altura */
+}
+
+body, .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ .menu {
+    width: 300px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 8px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: #161919;
+}
+
+.nav input {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.nav span {
+    position: absolute;
+    left: 20px;
+    width: 25px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ span {
+    background-color: #f974a1;
+}
+
+.nav span:nth-child(2) {
+    transform: translateY(-8px);
+}
+
+.nav input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.nav span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.nav input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 20px; /* Adiciona espaço extra acima do conteúdo */
+}
+.topo img{
+    border-radius: 20px;
+}
+
+.col-2 {
+    flex-basis: 45%;
+    min-width: 250px;
+    margin-top: 10px; /* Move o texto um pouco mais para baixo */
+}
+
+.col-2 h1 {
+    font-size: 36px;
+    line-height: 45px;
+    margin: 10px 0;
+}
+
+.col-2 p {
+    font-weight: 600;
+    color: var(--cor-btn-font);
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--cor-fonte);
+    background: var(--cor-btn);
+    padding: 6px 20px;
+    margin: 28px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+    scroll-behavior: smooth;
+}
+
+.btn:hover {
+    background: var(--cor-btn-hover);
+    color: var(--cor-btn-font);
+}
+
+img {
+    flex-basis: 45%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 10px; /* Move a imagem um pouco mais para baixo */
+}
+.about-us h2{
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 30px;
+}
+.Our {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 50px;
+}
+
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    overflow: hidden;
+    background: #ffffff;
+    color: #21201e;
+    text-align: center;
+    width: 200px;
+    height: 350px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin: 1.5rem;
+}
+
+.product .product-title, .product .product-price {
+    font-size: 18px;
+}
+
+.product:hover img {
+    scale: 1.1;
+}
+
+.product:hover {
+    box-shadow: 5px 15px 20px #eeeeee;
+}
+
+.product img {
+    height: 180px;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+
+.product a:link, .product a:visited {
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2c3e50;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    margin-top: 8px;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.product a:hover {
+    transform: scale(1.1);
+}
+
+#produtos {
+    scroll-behavior: smooth;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #000; /* Cor preta */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Estilos para links no rodapé */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.about-us img {
+    border-radius: 20%;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.about-us-content {
+    max-width: 500px;
+    background-color: #fff; /* Adiciona um fundo branco */
+    padding: 15px;
+    border-radius: 15px; /* Torna os cantos mais arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+}
+
+.about-us-content h2 {
+    margin-bottom: 15px;
+}
+
+.exemplos{
+    width: 800px;
+    height: 350px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    left: 10px;
+    right: 10px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exemplos h2{
+    display: flex;              /* Ativa o Flexbox */
+    align-items: center;        /* Alinha verticalmente ao centro */
+    justify-content: center;    /* Alinha horizontalmente ao centro */
+    font-size: 30px;            /* Tamanho da fonte */
+}
+.exemplos img{
+    width: 200px;
+    height: 200px;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.eximg img {
+    width: 350px; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 320px; /* Define um tamanho máximo */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    body {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+
+    .topo {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .col-2 {
+        width: 90%;
+        text-align: center;
+    }
+
+    .col-2 h1 {
+        font-size: 28px;
+    }
+
+   
+    .topo img {
+        display: none;
+    }
+
+    .about-us {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .product {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav {
+        display: none;
+    }
+
+    .topo {
+        flex-direction: column;
+    }
+
+    .col-2 h1 {
+        font-size: 20px;
+    }
+
+    .eximg img {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .col-2 h1 {
+        font-size: 18px;
+    }
+
+    .product {
+        width: 100%;
+    }
+}
+.exemplos{
+    width: 400px;
+}
+
+

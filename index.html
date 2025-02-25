@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Serviços lover´s unipessoal.lda </title>
+    <link rel="stylesheet" href="index.css">
+    <!-- CSS do Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<!-- JS do Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="nav">
+        <input type="checkbox">
+        <span></span>
+        <span></span>
+        <div class="menu">
+            <li><a href="#topo">Início</a></li>
+            <li><a href="#our-products">Reservas</a></li>
+            <li><a href="#about_us">Sobre</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+        </div>
+    </div>
+    <img src="logo-isabela-removebg-preview.png" alt="" class="logo">
+    <div class="topo" id="topo">
+        <div class="col-2">
+            <h1>O que precisares <br> Nós fazemos!</h1>
+            <p>Esclareça as suas duvidas, peça um orçamento.</p>
+            <br><a href="#our-products" class="btn"> Mais informações &#8594;</a>
+        </div>
+        <img src="Manutenção.jpg" alt="">
+    </div>
+    <br>
+    <br>
+    <section class="products">
+        <h2 id="our-products" class="Our">Nossos Serviços</h2>
+        <div class="all-products">
+            <div class="product">
+                <img src="manutençao-removebg-preview.png">
+                <div class="product-info">
+                    <h4 class="product-title">Limpeza</h4>
+                    <p class="product-price"></p>
+                    <a class="product-btn" href="#">orçamento</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="limpeza-removebg-preview.png">
+                <div class="product-info">
+                    <h4 class="product-title">manutenção</h4>
+                    <p class="product-price"></p>
+                    <a class="product-btn" href="#">orçamento</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="admistrativa-removebg-preview.png">
+                <div class="product-info">
+                    <h4 class="product-title">Administração</h4>
+                    <p class="product-price"></p>
+                    <a class="product-btn" href="#">orçamento</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div class="exemplos">
+        <h2>Exemplos</h2>
+        <div class="eximg">
+            <img id="slide" src="admitrativo.jpeg" alt="">
+        </div>
+    </div>
+    <br>
+    <h2 class="Our">Sobre nós</h2>
+    <section id="about_us" class="about-us">
+        <img src="logo-isabela-removebg-preview.png" alt="">
+        <div class="about-us-content">
+            <h2>Sobre Nós</h2>
+            <p>Oferecemos limpeza e manutenção profissional para garantir um ambiente agradável e impecável.</p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <h2 id="contactos" class="Our">Contactos</h2>
+    <section class="about-us">
+        <img src="d.izabel.jpg" alt="Sobre Nós">
+        <div class="about-us-content">
+            <h2>Isabel</h2>
+            <p>Formas de contacto:</p>
+            <p>Email: servicosloversgeral@gmail.com</p>
+            <p>Tel: 934 877 036 / 937 373 671</p>
+            <p>Facebook: @servicos.lover.s</p>
+        </div>
+    </section>
+    <br>
+    <section class="about-us">
+        <img src="pedro.jpg" alt="Sobre Nós">
+        <div class="about-us-content">
+            <h2>Pedro Moisés</h2>
+            <p>Desenvolvedor deste Website</p>
+            <p>Formas de contacto:</p>
+            <p>Email: pedro14moises@gmail.com</p>
+            <p>Tel: 913 903 399</p>
+            <p>WhatsApp: 913 903 399</p>
+        </div>
+    </section>
+        <br>
+        <br>
+    <footer>
+        <p>&copy; 2025 Serviços lover´s unipessoal.lda. Todos os direitos reservados.</p>
+        <p>
+            <a href="#topo">Página Inicial</a> |
+            <a href="#about_us">Sobre</a> |
+            <a href="#contactos-">Contatos</a>
+        </p>
+    </footer>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Por favor, entre em contacto com o número de telefone: 937 737 671 para fazer a sua reserva.</p>
+        </div>
+    </div>
+
+    <script>
+                    // Script para abrir e fechar o modal
+     document.querySelectorAll('.product-btn').forEach(function(button) {
+         button.addEventListener('click', function(event) {
+             event.preventDefault();
+             document.getElementById('myModal').style.display = "flex";
+         });
+     });
+
+     document.querySelector('.close').addEventListener('click', function() {
+         document.getElementById('myModal').style.display = "none";
+     });
+
+     window.addEventListener('click', function(event) {
+         if (event.target == document.getElementById('myModal')) {
+             document.getElementById('myModal').style.display = "none";
+         }
+     });
+
+       // Lista de imagens
+    const imagens = ["","torneiira.jpg", "admitrativo.jpeg", "cozinha.jpg"];
+    let index = 0;
+
+    function trocarImagem() {
+        index = (index + 1) % imagens.length; // Muda o índice da imagem
+        document.getElementById("slide").src = imagens[index]; // Atualiza a imagem
+    }
+
+    // Troca a imagem a cada 3 segundos
+    setInterval(trocarImagem, 3000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 3000, // Troca de imagem a cada 3 segundos
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});
+
+    </script>
+
+  
+    <script src="style.js"></script>
+</body>
+</html>
